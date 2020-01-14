@@ -9,23 +9,25 @@ class App extends React.Component{
     constructor(props){
         super(props);
         this.state={lat:null,errorMessage: ''};
-
-        window.navigator.geolocation.getCurrentPosition(
-            position=>{
-                this.setState({lat: position.coords.latitude});
-            },
-            err=> {
-                this.setState({errorMessage:err.message})
-            }
-             );
+        
+      
     }
+
+   state={lat:null, errorMessage: ''};
+    // componentDidMount(){
+    //         console.log('My component was rendered to the screen ');
+    // }
+
+    // componentDidUpdate(){
+    //     console.log('My component was just update-it rerender!');
+    // }
 
     componentDidMount(){
-            console.log('My component was rendered to the screen ');
-    }
-
-    componentDidUpdate(){
-        console.log('My component was just update-it rerender!');
+        window.navigator.geolocation.getCurrentPosition(
+            position=> this.setState({lat: position.coords.latitude}),
+            err=> this.setState({errorMessage:err.message})
+            
+             );
     }
 
     render(){
