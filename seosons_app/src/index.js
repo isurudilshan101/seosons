@@ -9,7 +9,7 @@ import SeasonDisplay from './SeasonDisplay';
                 constructor(props){
                     super(props);
 
-                    this.state={lat:null};
+                    this.state={lat:null, errorMessage:''};
                 }
 
                 render(){
@@ -17,10 +17,19 @@ import SeasonDisplay from './SeasonDisplay';
                         position=>{
                             this.setState({lat: position.coords.latitude});
                         },
-                        err=>console.log(err)
+                        err=>{this.setState({errorMessage:err.message});
+
+                        }
                     );
 
-                    return <div>Latitude:{this.state.lat}</div>;
+                    return (
+                    <div>Latitude:{this.state.lat}
+
+                    <br/>
+
+                    Error:{this.state.errorMessage}
+                    </div>
+                        );
             
                 }
 
