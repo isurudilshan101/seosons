@@ -30,7 +30,7 @@ import SeasonDisplay from './SeasonDisplay';
                  }
 
                  if(this.state.errorMessage &&  !this.state.lat){
-                 return <div>Error:{this.state.err}</div>
+                 return <div>Error:{this.state.errorMessage}</div>
                  }
 
                  return <div>Loading </div>
