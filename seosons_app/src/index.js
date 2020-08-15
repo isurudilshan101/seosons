@@ -10,9 +10,7 @@ import SeasonDisplay from './SeasonDisplay';
                     super(props);
 
                     this.state={lat:null, errorMessage:''};
-                }
 
-                render(){
                     window.navigator.geolocation.getCurrentPosition(
                         position=>{
                             this.setState({lat: position.coords.latitude});
@@ -21,19 +19,30 @@ import SeasonDisplay from './SeasonDisplay';
 
                         }
                     );
-
-                    return (
-                    <div>Latitude:{this.state.lat}
-
-                    <br/>
-
-                    Error:{this.state.errorMessage}
-                    </div>
-                        );
-            
                 }
 
+                render(){
+                 
+
+                    
+                 if(!this.state.errorMessage && this.state.lat){
+                     return <div>Latidude:{this.state.lat}</div>;
+                 }
+
+                 if(this.state.errorMessage &&  !this.state.lat){
+                 return <div>Error:{this.state.err}</div>
+                 }
+
+                 return <div>Loading </div>
+
+              
+
+                        
+            
+                
+
             }
+        }
             
             
 
