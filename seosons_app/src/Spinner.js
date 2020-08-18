@@ -9,6 +9,10 @@ return(
 </div>
 );
 
+Spinner.defaultProps={
+    message: 'Loading...'
+}
+
 };
 
 export default Spinner;

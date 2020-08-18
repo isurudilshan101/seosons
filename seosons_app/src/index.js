@@ -37,7 +37,7 @@ import Spinner from './Spinner';
                  }
 
 
-                 return <Spinner message="Please accept location request"/>;
+                 return <Spinner />;
 
               
 
