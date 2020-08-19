@@ -24,26 +24,30 @@ import Spinner from './Spinner';
                     );
                 }
 
-                render(){
-                 
-
+                renderContent(){
+                        
                     
                  if(!this.state.errorMessage && this.state.lat){
-                     return <SeasonDisplay lat={this.state.lat} />;
-                 }
+                    return <SeasonDisplay lat={this.state.lat} />;
+                }
 
-                 if(this.state.errorMessage &&  !this.state.lat){
-                 return <div>Error:{this.state.errorMessage}</div>
-                 }
+                if(this.state.errorMessage &&  !this.state.lat){
+                return <div>Error:{this.state.errorMessage}</div>
+                }
 
 
-                 return <Spinner/>;
+                return <Spinner/>;
+                }
 
-              
-
-                        
-            
-                
+                render(){
+                 
+                      
+                            return(
+                                <div className="border red">
+                                        {this.renderContent()}
+                                </div>
+                            );
+                      
 
             }
         }
