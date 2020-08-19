@@ -43,7 +43,7 @@ import Spinner from './Spinner';
                  
                       
                             return(
-                                <div className="border red">
+                                <div className="border">
                                         {this.renderContent()}
                                 </div>
                             );
